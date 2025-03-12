@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 export async function generateManifest() {
     const manifest = {
-        window: { width: 120, height: 180 },
+        window: { width: 200, height: 180 },
         parameters: PARAMETERS.map(param => ({
             paramId: param.paramId,
             name: param.name,

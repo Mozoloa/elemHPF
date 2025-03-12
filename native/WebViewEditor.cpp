@@ -41,7 +41,7 @@ void dispatchEvent(choc::ui::WebView *webView, const std::string &eventName, con
 WebViewEditor::WebViewEditor(juce::AudioProcessor *proc, juce::File const &assetDirectory, int width, int height)
     : juce::AudioProcessorEditor(proc)
 {
-    setSize(600, 480);
+    setSize(200, 180);
 
     choc::ui::WebView::Options opts;
 
@@ -76,7 +76,7 @@ WebViewEditor::WebViewEditor(juce::AudioProcessor *proc, juce::File const &asset
 #endif
 
     addAndMakeVisible(viewContainer);
-    viewContainer.setBounds({0, 0, 600, 480});
+    viewContainer.setBounds({0, 0, 200, 180});
 
     // Install message passing handlers
     webView->bind("__postNativeMessage__", [=](const choc::value::ValueView &args) -> choc::value::Value

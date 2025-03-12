@@ -1,7 +1,7 @@
 {
   "window": {
-    "width": 640,
-    "height": 640
+    "width": 200,
+    "height": 180
   },
   "parameters": [
     {
@@ -37,7 +37,7 @@
     },
     {
       "paramId": "eq_hpFreq",
-      "name": "HP Freq",
+      "name": "HPF Freq",
       "min": 20,
       "max": 10000,
       "defaultValue": 20,

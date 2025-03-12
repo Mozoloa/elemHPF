@@ -79,9 +79,7 @@ export default function Interface(props) {
   return (
     <div id='main'>
       {props.error && (<ErrorAlert message={props.error.message} reset={props.resetErrorState} />)}
-      <div id='controls'>
-        <Filter props={props} manifest={PARAMETERS} paramValues={paramValues} handleValueChange={handleValueChange} />
-      </div>
+      <Filter props={props} manifest={PARAMETERS} paramValues={paramValues} handleValueChange={handleValueChange} />
     </div>
   );
 }

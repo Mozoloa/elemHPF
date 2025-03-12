@@ -10,7 +10,7 @@
   --text-color: #aaa;
   --lines-color: hsla(0, 0%, 100%, 0.05);
   --global-padding: 6px;
-  --global-width: 120px;
+  --global-width: 200px;
   --global-height: 180px;
   user-select: none;
   background-color: black;
@@ -159,4 +159,8 @@
   border-radius: 5px;
   box-shadow: hsla(0, 0%, 100%, 0.12) 0px 0px 10px;
   cursor: pointer;
+}
+
+.meter-block {
+  height: 100%;
 }

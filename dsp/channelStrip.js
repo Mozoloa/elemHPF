@@ -15,8 +15,8 @@ export default function channelStrip(props, left_in, right_in) {
     const hpFreq = el.sm(eq_hpFreq);
 
     // Input gain stage
-    const gainedInL = el.meter({ name: 'gainedInL' }, el.mul(left_in, inGain));
-    const gainedInR = el.meter({ name: 'gainedInR' }, el.mul(right_in, inGain));
+    const gainedInL = el.meter({ name: 'in_L' }, el.mul(left_in, inGain));
+    const gainedInR = el.meter({ name: 'in_R' }, el.mul(right_in, inGain));
 
     // High-pass filter
     let hpL = el.highpass(hpFreq, 0.707, gainedInL);
@@ -28,8 +28,8 @@ export default function channelStrip(props, left_in, right_in) {
     }
 
     // Output gain stage
-    const gainedOutL = el.meter({ name: 'gainedOutL' }, el.mul(hpL, outGain));
-    const gainedOutR = el.meter({ name: 'gainedOutR' }, el.mul(hpR, outGain));
+    const gainedOutL = el.mul(hpL, outGain);
+    const gainedOutR = el.mul(hpR, outGain);
 
     // Dry/wet mix
     const mixedL = el.select(drywet, gainedOutL, left_in);
@@ -39,7 +39,7 @@ export default function channelStrip(props, left_in, right_in) {
     const outL = el.select(bypass, left_in, mixedL);
     const outR = el.select(bypass, right_in, mixedR);
     return {
-        left: el.meter({ name: 'outL' }, outL),
-        right: el.meter({ name: 'outR' }, outR),
+        left: el.meter({ name: 'out_L' }, outL),
+        right: el.meter({ name: 'out_R' }, outR),
     };
 }
