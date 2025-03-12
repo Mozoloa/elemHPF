@@ -1,0 +1,188 @@
+/* Common utility classes */
+.absolute-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Base meter container */
+.scaled-meter {
+    position: relative;
+    display: flex;
+    height: 100%;
+}
+
+/* Stereo container */
+.stereo-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.stereo-spacer {
+    width: 1px;
+    height: 100%;
+    background: transparent;
+}
+
+/* Individual meter */
+.meter-container {
+    position: relative;
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+/* Canvas styling */
+.meter-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Overlay with colors */
+.meter-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+}
+
+/* Overload indicator */
+.meter-overload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2%;
+    /* Removed global transition */
+}
+
+.meter-overload.active {
+    opacity: 1;
+    transition: none;
+    /* immediate appearance */
+}
+
+.meter-overload.inactive {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    /* slow fade away */
+}
+
+/* Decibel scale */
+.decibel-scale {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-shadow:
+        1px 1px 1px black,
+        -1px -1px 1px black,
+        1px -1px 1px black,
+        -1px 1px 1px black;
+    width: 100%;
+    height: 100%;
+}
+
+.scale-element-container {
+    width: 100%;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scale-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+.scale-dot {
+    box-shadow: 0px 0px 1px 1px black;
+    background-color: var(--text-color);
+    width: 2px;
+    height: 1px;
+    opacity: 1;
+}
+
+.scale-mark {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+/* Indicator line */
+.indicator-line {
+    position: absolute;
+    width: 100%;
+    border-style: solid;
+    transform: translateY(50%);
+    background: linear-gradient(to bottom, hsla(20, 100%, 50%, 0.2) 0%, transparent 100%);
+    transition: background 200ms ease, border-color 200ms ease;
+}
+
+.indicator-line.normal {
+    height: 2px;
+    border-width: 1px;
+}
+
+.indicator-line.ranged {
+    border-width: 2px;
+    border-color: transparent;
+    border-image: linear-gradient(to bottom, hsla(200, 100%, 100%, 1) 0%, transparent 20%, transparent 80%, hsla(200, 100%, 90%, 1) 100%) 1;
+}
+
+/* Gain label */
+.gain-label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    line-height: 43px;
+    overflow: hidden;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+    border-radius: 2px;
+    background: linear-gradient(to top, hsla(20, 100%, 30%, 0.7) 0%, transparent 100%);
+    transition: opacity 200ms ease, color 200ms ease;
+}
+
+/* Default colors - can be overridden via JS props */
+:root {
+    --meter-low-color: hsla(200, 100%, 10%, 1);
+    --meter-safe-low-color: hsla(200, 50%, 40%, 1);
+    --meter-safe-high-color: hsla(200, 60%, 65%, 1);
+    --meter-warn-color: hsla(30, 100%, 70%, 1);
+    --meter-danger-color: hsla(10, 100%, 40%, 1);
+    --meter-clip-color: hsla(0, 100%, 50%, 1);
+    --meter-tool-color: hsla(30, 100%, 70%, 1);
+}

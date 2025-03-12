@@ -1,0 +1,29 @@
+.toggle-knob {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.toggle-knob:hover {
+    cursor: pointer;
+}
+
+.toggle-name {
+    font-size: 0.9rem;
+    /*     color: #000000; */
+    font-weight: bold;
+}
+
+.toggle-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    border-radius: 2px;
+    mix-blend-mode: multiply;
+}

@@ -1,0 +1,43 @@
+{
+  "name": "elemHPF",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf dist",
+    "predev": "npm run clean",
+    "prebuild": "npm run clean",
+    "dev": "npm run dev-native && concurrently \"npm run dev-dsp\" \"vite\"",
+    "dev-native": "zx scripts/build-native.mjs --dev",
+    "dev-dsp": "esbuild dsp/main.js --watch --bundle --outfile=public/dsp.main.js",
+    "build-native": "zx scripts/build-native.mjs",
+    "build-dsp": "esbuild dsp/main.js --bundle --outfile=public/dsp.main.js",
+    "build-ui": "vite build",
+    "build": "npm run build-dsp && npm run build-ui && npm run build-native",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@elemaudio/core": "^3.0.0",
+    "@heroicons/react": "^2.0.18",
+    "@use-gesture/react": "^10.2.27",
+    "cpy-cli": "^4.2.0",
+    "esbuild": "^0.17.8",
+    "invariant": "^2.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "resize-observer-polyfill": "^1.5.1",
+    "rimraf": "^5.0.0",
+    "zustand": "^4.3.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.9",
+    "zx": "^7.2.3"
+  }
+}

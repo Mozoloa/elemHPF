@@ -1,0 +1,4 @@
+.dragbehaviour {
+    touch-action: none;
+    cursor: pointer;
+}

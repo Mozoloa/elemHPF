@@ -1,0 +1,49 @@
+#filter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: var(--global-padding);
+    gap: 2px;
+}
+
+#filter-ctrls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    padding: var(--global-padding);
+    border-radius: 10px;
+}
+
+#master-ctrls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--background-color);
+    padding: var(--global-padding);
+    border-radius: 10px;
+}
+
+.offset-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    height: 15px;
+    text-align: center;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 15px;
+}
